@@ -7,9 +7,6 @@ $(document).ready(function() {
 	//Main Menu is visible
 	$("#bottom").animate({left:"0"},speed);
 	$("#logo").animate({left:"50%"},speed);
-	//City List toggled
-	$('#cityzone1').slideToggle(speed);
-	$('#programs1').slideToggle(speed); 
 	//Lists
 	$('#citylist').show();
 	$('#unilist').hide();
@@ -60,30 +57,14 @@ $(document).ready(function() {
 		$('#unilist').show();
 	});
 	
-	//City list toggle
-	$('#0city1').click(function() {
-		$('#0cityzone1').slideToggle(speed);
-	});
-	$('#0zone1').click(function() {
-		$('#0programs1').slideToggle(speed);
-	});
-	
-	//University list toggle
-	$('#city1').click(function() {
-		$('#cityzone1').slideToggle(speed);
-	});
-	$('#zone1').click(function() {
-		$('#programs1').slideToggle(speed);
-	});
-	
 });
 
 	
 //new functions compatible with auto-population
-function toggleCity(title) {
+function toggleZones(title) {
 	$('#zones-of-'+title).slideToggle(speed);
 };
 
-function toggleZone(title) {
+function toggleEvents(title) {
 	$('#events-of-'+title).slideToggle(speed);
 };

@@ -20,28 +20,28 @@ $.getJSON(dataJSONlocation).done(function(data) {
 		
 		if (document.getElementById('city-'+miestastag) == null) {
 			var cityList = document.getElementById('citylist');
-			citylist.insertAdjacentHTML('beforeEnd','<li><div class="list" id="city-'+miestastag+'" onclick="toggleCity(\''+miestastag+'\')">'+miestas+'</div><ul id="zones-of-'+miestastag+'"></ul></li>'); 
-			toggleCity(miestastag);
+			citylist.insertAdjacentHTML('beforeEnd','<li><div class="list" id="city-'+miestastag+'" onclick="toggleZones(\''+miestastag+'\')">'+miestas+'</div><ul id="zones-of-'+miestastag+'"></ul></li>'); 
+			toggleZones(miestastag);
 		}
 		
 		if (document.getElementById('zone-'+miestastag+'-'+zonatag) == null) {
 			var elementID = 'zones-of-'+miestastag;
 			var zonelist = document.getElementById(elementID);
-			zonelist.insertAdjacentHTML('beforeEnd','<li><div class="list2" id="zone-'+miestastag+'-'+zonatag+'" onclick="toggleZone(\''+miestastag+'-'+zonatag+'\')">'+zona+'</div><div id="events-of-'+miestastag+'-'+zonatag+'"></div></li>'); 
-			toggleZone(miestastag+'-'+zonatag);
+			zonelist.insertAdjacentHTML('beforeEnd','<li><div class="list2" id="zone-'+miestastag+'-'+zonatag+'" onclick="toggleEvents(\''+miestastag+'-'+zonatag+'\')">'+zona+'</div><div id="events-of-'+miestastag+'-'+zonatag+'"></div></li>'); 
+			toggleEvents(miestastag+'-'+zonatag);
 		}
 		
 		if (document.getElementById('uni-'+unitag) == null) {
 			var unilist = document.getElementById('unilist');
-			unilist.insertAdjacentHTML('beforeEnd', '<li><div class="list" id="uni-'+unitag+'" onclick="toggleCity(\''+unitag+'\')">'+universitetas+'</div><ul id="zones-of-'+unitag+'"></ul></li>'); 
-			toggleCity(unitag);
+			unilist.insertAdjacentHTML('beforeEnd', '<li><div class="list" id="uni-'+unitag+'" onclick="toggleZones(\''+unitag+'\')">'+universitetas+'</div><ul id="zones-of-'+unitag+'"></ul></li>'); 
+			document.getElementById('zones-of-'+unitag).style.display="none";
 		}
 		
 		if (document.getElementById('zone-'+unitag+'-'+zonatag) == null) {
 			var elementID = 'zones-of-'+unitag;
 			var zonelist = document.getElementById(elementID);
-			zonelist.insertAdjacentHTML('beforeEnd', '<li><div class="list2" id="zone-'+unitag+'-'+zonatag+'" onclick="toggleZone(\''+unitag+'-'+zonatag+'\')">'+zona+'</div><div id="events-of-'+unitag+'-'+zonatag+'"></div></li>'); 
-			toggleZone(unitag+'-'+zonatag);
+			zonelist.insertAdjacentHTML('beforeEnd', '<li><div class="list2" id="zone-'+unitag+'-'+zonatag+'" onclick="toggleEvents(\''+unitag+'-'+zonatag+'\')">'+zona+'</div><div id="events-of-'+unitag+'-'+zonatag+'"></div></li>'); 
+			document.getElementById('events-of-'+unitag+'-'+zonatag).style.display="none";
 		}
 		
 		//if (!foundUni) {
