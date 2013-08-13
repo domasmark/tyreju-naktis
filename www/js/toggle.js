@@ -5,6 +5,7 @@ $(document).ready(function() {
 	$('#mapcontent').hide();
 	$('#gamecontent').hide();
 	$('#top').hide();
+	$('#top2').hide();
 	//Lists
 	$('#citylist').show();
 	$('#unilist').hide();
@@ -15,35 +16,35 @@ $(document).ready(function() {
 		$('#content').show();
 		$("#bottom").animate({left:"-200%"},speed);
 		$("#logo").animate({left:"-200%"},speed);
-		$("#toptitle").html("Programa");
-
 		$("#top").animate({left:"0"},speed);
 		$("#content").animate({left:"0"},speed);
 	});
 	$(".button.map").click(function(){
-		$('#top').show();
+		$('#top2').show();
 		$('#mapcontent').show();
 		$("#bottom").animate({left:"-200%"},speed);
 		$("#logo").animate({left:"-200%"},speed);
 		$("#toptitle").html("Žemėlapis");
-
-		$("#top").animate({left:"0"},speed);
+		$("#top2").animate({left:"0"},speed);
 		$("#mapcontent").animate({left:"0"},speed);
 	});
 	$(".button.game").click(function(){
-		$('#top').show();
+		$('#top2').show();
 		$('#gamecontent').show();
 		$("#bottom").animate({left:"-200%"},speed);
 		$("#logo").animate({left:"-200%"},speed);
 		$("#toptitle").html("Žaidimas");
-
-		$("#top").animate({left:"0"},speed);
+		$("#top2").animate({left:"0"},speed);
 		$("#gamecontent").animate({left:"0"},speed);
 	});
 
 	//List Menu back button
-	$("#back").click(function(){
+	//funtion for android back button
+	//document.addEventListener("backbutton", onBackKeyDown, false);
+	//var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
+	$(".back").click(function(){
 		$('#top').hide();
+		$('#top2').hide();
 		$('#content').hide();
 		$('#mapcontent').hide();
 		$('#gamecontent').hide();
@@ -51,7 +52,6 @@ $(document).ready(function() {
 		$("#content").animate({left:"200%"},speed);
 		$("#mapcontent").animate({left:"200%"},speed);
 		$("#gamecontent").animate({left:"200%"},speed);
-
 		$("#bottom").animate({left:"0"},speed);
 		$("#logo").animate({left:"50%"},speed);
 	});
