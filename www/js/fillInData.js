@@ -34,14 +34,14 @@ $.getJSON(dataJSONlocation).done(function(data) {
 		if (document.getElementById('uni-'+unitag) == null) {
 			var unilist = document.getElementById('unilist');
 			unilist.insertAdjacentHTML('beforeEnd', '<li><div class="list" id="uni-'+unitag+'" onclick="toggleCity(\''+unitag+'\')">'+universitetas+'</div><ul id="zones-of-'+unitag+'"></ul></li>'); 
-			//toggleCity(unitag);
+			toggleCity(unitag);
 		}
 		
 		if (document.getElementById('zone-'+unitag+'-'+zonatag) == null) {
 			var elementID = 'zones-of-'+unitag;
 			var zonelist = document.getElementById(elementID);
 			zonelist.insertAdjacentHTML('beforeEnd', '<li><div class="list2" id="zone-'+unitag+'-'+zonatag+'" onclick="toggleZone(\''+unitag+'-'+zonatag+'\')">'+zona+'</div><div id="events-of-'+unitag+'-'+zonatag+'"></div></li>'); 
-			//toggleZone(unitag+'-'+zonatag);
+			toggleZone(unitag+'-'+zonatag);
 		}
 		
 		//if (!foundUni) {
