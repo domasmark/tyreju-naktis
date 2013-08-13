@@ -5,6 +5,7 @@ $(document).ready(function() {
 	$("#top").animate({left:"200%"},speed);
 	$("#content").animate({left:"-200%"},speed);
 	$("#mapcontent").animate({left:"-200%"},speed);
+	$("#gamecontent").animate({left:"-200%"},speed);
 	//Main Menu is visible
 	$("#bottom").animate({left:"0"},speed);
 	$("#logo").animate({left:"50%"},speed);
@@ -35,7 +36,7 @@ $(document).ready(function() {
 		$("#toptitle").html("Žaidimas");
 
 		$("#top").animate({left:"0"},speed);
-		$("#game-content").animate({left:"0"},speed);
+		$("#gamecontent").animate({left:"0"},speed);
 	});
 
 	//List Menu back button
@@ -43,6 +44,7 @@ $(document).ready(function() {
 		$("#top").animate({left:"200%"},speed);
 		$("#content").animate({left:"-200%"},speed);
 		$("#mapcontent").animate({left:"-200%"},speed);
+		$("#gamecontent").animate({left:"-200%"},speed);
 
 		$("#bottom").animate({left:"0"},speed);
 		$("#logo").animate({left:"50%"},speed);
