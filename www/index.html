@@ -11,6 +11,7 @@
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 		<script src="js/fillInData.js"></script>
     	<script src="js/map.js"></script>
+		<script src="js/codes.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
 	</head>
 	<body>
@@ -48,11 +49,12 @@
 			<div id="gamecontent">
 				<div id="gameon">
 					<p>Surink 5 kodus ir gauk prizą! Kodų ieškok renginių vietose.</p>
-					<p>Tau dar liko rasti <span>2</span> kodus, kad gautum nuorodą, kur galėsi atsiimti prizą.</p>
+					<p>Tau dar liko rasti <span id="code-counter"></span> kodus, kad gautum nuorodą, kur galėsi atsiimti prizą.</p>
 					<p>Įvesti kodą:</p>
-					<input class="codeinput" maxlength="8" type="tel">
-					<button type="button" class="ok">OK</button>
-					<p>Neteisingas kodas!</p>
+					<input class="codeinput" id="codeinputfield" maxlength="8" type="tel">
+					<button type="button" class="ok" onclick="enterCode()">OK</button>
+					</form>
+					<p id="statusfield"></p>
 				</div>
 				<div id="gameover">
 					<p>Sveikinu! Tu surinkai reikiamą kodų skaičių.</p>
