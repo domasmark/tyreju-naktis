@@ -12,30 +12,13 @@ $(document).ready(function() {
 
 	//Main Menu Buttons
 	$(".button.list").click(function(){
-		$('#top').show();
-		$('#content').show();
-		$("#bottom").animate({left:"-200%"},speed);
-		$("#logo").animate({left:"-200%"},speed);
-		$("#top").animate({left:"0"},speed);
-		$("#content").animate({left:"0"},speed);
+		menuList();
 	});
 	$(".button.map").click(function(){
-		$('#top2').show();
-		$('#mapcontent').show();
-		$("#bottom").animate({left:"-200%"},speed);
-		$("#logo").animate({left:"-200%"},speed);
-		$("#toptitle").html("Žemėlapis");
-		$("#top2").animate({left:"0"},speed);
-		$("#mapcontent").animate({left:"0"},speed);
+		menuMap();
 	});
 	$(".button.game").click(function(){
-		$('#top2').show();
-		$('#gamecontent').show();
-		$("#bottom").animate({left:"-200%"},speed);
-		$("#logo").animate({left:"-200%"},speed);
-		$("#toptitle").html("Žaidimas");
-		$("#top2").animate({left:"0"},speed);
-		$("#gamecontent").animate({left:"0"},speed);
+		menuGame();
 	});
 
 	//List Menu back button
@@ -43,17 +26,7 @@ $(document).ready(function() {
 	//document.addEventListener("backbutton", onBackKeyDown, false);
 	//var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
 	$(".back").click(function(){
-		$('#top').hide();
-		$('#top2').hide();
-		$('#content').hide();
-		$('#mapcontent').hide();
-		$('#gamecontent').hide();
-		$("#top").animate({left:"200%"},speed);
-		$("#content").animate({left:"200%"},speed);
-		$("#mapcontent").animate({left:"200%"},speed);
-		$("#gamecontent").animate({left:"200%"},speed);
-		$("#bottom").animate({left:"0"},speed);
-		$("#logo").animate({left:"50%"},speed);
+		menuBack();
 	});
 
 	//Cities / Universities toggle at list menu
@@ -68,6 +41,49 @@ $(document).ready(function() {
 	
 });
 
+//unified functions for controlling button beheviour
+function menuList() {
+	$('#top').show();
+	$('#content').show();
+	$("#bottom").animate({left:"-200%"},speed);
+	$("#logo").animate({left:"-200%"},speed);
+	$("#top").animate({left:"0"},speed);
+	$("#content").animate({left:"0"},speed);
+};
+
+function menuMap() {
+	$('#top2').show();
+	$('#mapcontent').show();
+	$("#bottom").animate({left:"-200%"},speed);
+	$("#logo").animate({left:"-200%"},speed);
+	$("#toptitle").html("Žemėlapis");
+	$("#top2").animate({left:"0"},speed);
+	$("#mapcontent").animate({left:"0"},speed);
+};
+
+function menuGame() {
+	$('#top2').show();
+	$('#gamecontent').show();
+	$("#bottom").animate({left:"-200%"},speed);
+	$("#logo").animate({left:"-200%"},speed);
+	$("#toptitle").html("Žaidimas");
+	$("#top2").animate({left:"0"},speed);
+	$("#gamecontent").animate({left:"0"},speed);
+};
+
+function menuBack() {
+	$('#top').hide();
+	$('#top2').hide();
+	$('#content').hide();
+	$('#mapcontent').hide();
+	$('#gamecontent').hide();
+	$("#top").animate({left:"200%"},speed);
+	$("#content").animate({left:"200%"},speed);
+	$("#mapcontent").animate({left:"200%"},speed);
+	$("#gamecontent").animate({left:"200%"},speed);
+	$("#bottom").animate({left:"0"},speed);
+	$("#logo").animate({left:"50%"},speed);
+};
 	
 //new functions compatible with auto-population
 function toggleZones(title) {

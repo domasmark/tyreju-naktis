@@ -45,20 +45,10 @@ var onSuccess = function(position) {
 			(function(aId, aZonatag, aMiestastag) {
 				google.maps.event.addListener(otherMarker, 'click', function (){
 					// cancel map
-					$("#top").animate({left:"200%"},speed);
-					$("#content").animate({left:"-200%"},speed);
-					$("#mapcontent").animate({left:"-200%"},speed);
-
-					$("#bottom").animate({left:"0"},speed);
-					$("#logo").animate({left:"50%"},speed);
+					menuBack();
 					
 					//show list
-					$("#bottom").animate({left:"-200%"},speed);
-					$("#logo").animate({left:"-200%"},speed);
-					$("#toptitle").html("Programa");
-
-					$("#top").animate({left:"0"},speed);
-					$("#content").animate({left:"0"},speed);
+					menuList();
 					
 					// show cities tab
 					$('#citylist').show();

@@ -23,14 +23,14 @@ $.getJSON(dataJSONlocation).done(function(data) {
 		if (document.getElementById('city-'+miestastag) == null) {
 			var cityList = document.getElementById('citylist');
 			cityList.insertAdjacentHTML('beforeEnd','<li><div class="list" id="city-'+miestastag+'" onclick="toggleZones(\''+miestastag+'\')">'+miestas+'</div><ul id="zones-of-'+miestastag+'"></ul></li>'); 
-			toggleZones(miestastag);
+			document.getElementById('zones-of-'+miestastag).style.display="none";
 		}
 		
 		if (document.getElementById('zone-'+miestastag+'-'+zonatag) == null) {
 			var elementID = 'zones-of-'+miestastag;
 			var zonelist = document.getElementById(elementID);
 			zonelist.insertAdjacentHTML('beforeEnd','<li><div class="list2" id="zone-'+miestastag+'-'+zonatag+'" onclick="toggleEvents(\''+miestastag+'-'+zonatag+'\')">'+zona+'</div><div id="events-of-'+miestastag+'-'+zonatag+'"></div></li>'); 
-			toggleEvents(miestastag+'-'+zonatag);
+			document.getElementById('events-of-'+miestastag+'-'+zonatag).style.display="none";
 		}
 		
 		if (document.getElementById('uni-'+unitag) == null) {
