@@ -1,6 +1,8 @@
 var dataJSONlocation = 'http://tnt.lanparty.lt/index.php';
+var eventsArray = new Array();
 $.getJSON(dataJSONlocation).done(function(data) {
 	$.each(data.events, function(fieldName, fieldValue) {
+		eventsArray.push(fieldValue);
 		var id = fieldValue.id;
 		var pavadinimas = fieldValue.pavadinimas;
 		var laikas = fieldValue.laikas;
@@ -20,7 +22,7 @@ $.getJSON(dataJSONlocation).done(function(data) {
 		
 		if (document.getElementById('city-'+miestastag) == null) {
 			var cityList = document.getElementById('citylist');
-			citylist.insertAdjacentHTML('beforeEnd','<li><div class="list" id="city-'+miestastag+'" onclick="toggleZones(\''+miestastag+'\')">'+miestas+'</div><ul id="zones-of-'+miestastag+'"></ul></li>'); 
+			cityList.insertAdjacentHTML('beforeEnd','<li><div class="list" id="city-'+miestastag+'" onclick="toggleZones(\''+miestastag+'\')">'+miestas+'</div><ul id="zones-of-'+miestastag+'"></ul></li>'); 
 			toggleZones(miestastag);
 		}
 		
@@ -50,28 +52,28 @@ $.getJSON(dataJSONlocation).done(function(data) {
 		
 		var eventHTML = '';
 		
-		eventHTML += '<div class="event-description">\n';
+		eventHTML += '<div id="event-'+id+'">\n';
 		eventHTML += '<div class="title">'+pavadinimas+'</div>\n';
 		eventHTML += '<div>'+laikas+'</div>\n'
 		eventHTML += '<p>'+universitetas+'</p>\n';
 		eventHTML += '<p>'+turinys+'</p>\n';
 		eventHTML += '<div>\n';
 		eventHTML += '<iframe style="opacity:0.8" width="260" height="260" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="';
-		eventHTML += zemelapis+'">\n</iframe>\n</div>';
+		eventHTML += 'https://maps.google.lt/maps/ms?msa=0&msid=207538713107079141497.0004de7d82653cd062056&ie=UTF8&t=m&ll='+zemelapis+'&spn=0,0&output=embed">\n</iframe>\n</div>';
 		eventHTML += '</div>';
 		
 		var zoneDiv = document.getElementById('events-of-'+miestastag+'-'+zonatag);
 		zoneDiv.insertAdjacentHTML('afterBegin', eventHTML);
 		
 		eventHTML = '';
-		eventHTML += '<div class="event-description">\n';
+		eventHTML += '<div id="event-'+id+'">\n';
 		eventHTML += '<div class="title">'+pavadinimas+'</div>\n';
 		eventHTML += '<div>'+laikas+'</div>\n'
 		eventHTML += '<p>'+miestas+'</p>\n';
 		eventHTML += '<p>'+turinys+'</p>\n';
 		eventHTML += '<div>\n';
 		eventHTML += '<iframe style="opacity:0.8" width="260" height="260" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="';
-		eventHTML += zemelapis+'">\n</iframe>\n</div>';
+		eventHTML += 'https://maps.google.lt/maps/ms?msa=0&msid=207538713107079141497.0004de7d82653cd062056&ie=UTF8&t=m&ll='+zemelapis+'&spn=0,0&output=embed">\n</iframe>\n</div>';
 		eventHTML += '</div>';
 		
 		var zoneDiv = document.getElementById('events-of-'+unitag+'-'+zonatag);

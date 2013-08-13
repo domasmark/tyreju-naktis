@@ -21,18 +21,68 @@ var onSuccess = function(position) {
 		  var map = new google.maps.Map(document.getElementById("mapcontent"),
 			mapOptions);
 		var marker = new google.maps.Marker({
-			position: mapOptions.center,
+			position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
 			map: map,
 			title:"Your position",
 			clickable: true,
 			icon: { path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW, scale:6 }
 			
 		});
-		google.maps.event.addListener(marker, 'click', function (){
-			window.location.replace('http://www.google.com');
 		
 		
-		});
+		// creating event markers
+		for (var i = 0; i < eventsArray.length; i++) {
+			var event = eventsArray[i];
+			var id = event.id;
+			var pavadinimas = event.pavadinimas;
+			var miestastag = event.miestas.toLowerCase().replace(/\s+/g, '');
+			var zonatag = event.zona.toLowerCase().replace(/\s+/g, '');
+			var zemelapis = event.zemelapis;
+			var gpsposition = zemelapis.split(',');
+			var lat = parseFloat(gpsposition[0]);
+			var lon = parseFloat(gpsposition[1]);
+				
+			var otherMarker = new google.maps.Marker({
+				
+				position: new google.maps.LatLng(lat, lon),
+				map: map,
+				title: pavadinimas,
+				clickable: true,
+				icon: { path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW, scale:6 }
+			});
+			
+			(function(aId, aZonatag, aMiestastag) {
+				google.maps.event.addListener(otherMarker, 'click', function (){
+					// cancel map
+					$("#top").animate({left:"200%"},speed);
+					$("#content").animate({left:"-200%"},speed);
+					$("#mapcontent").animate({left:"-200%"},speed);
+
+					$("#bottom").animate({left:"0"},speed);
+					$("#logo").animate({left:"50%"},speed);
+					
+					//show list
+					$("#bottom").animate({left:"-200%"},speed);
+					$("#logo").animate({left:"-200%"},speed);
+					$("#toptitle").html("Programa");
+
+					$("#top").animate({left:"0"},speed);
+					$("#content").animate({left:"0"},speed);
+					
+					// show cities tab
+					$('#citylist').show();
+					$('#unilist').hide();
+					
+					// focus on certain event
+					console.log(aMiestastag+'-'+aZonatag+'-'+aId);
+					$('#zones-of-'+aMiestastag).slideDown(speed);
+					$('#events-of-'+aMiestastag+'-'+aZonatag).slideDown(speed);
+					$('html,body').animate({scrollTop: $('#event-'+aId).offset().top - 78},'slow');
+				});
+			})(id, zonatag, miestastag);
+		};
+		
+		
 		map.set('styles', [
 			{
 				featureType: 'road',
