@@ -36,7 +36,14 @@
 				position: mapOptions.center,
 				map: map,
 				title:"Your position",
-				icon: { path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW, scale:4 }
+				clickable: true,
+				icon: { path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW, scale:6 }
+				
+			});
+			google.maps.event.addListener(marker, 'click', function (){
+				window.location.replace('http://www.google.com');
+			
+			
 			});
 			map.set('styles', [
 				{
