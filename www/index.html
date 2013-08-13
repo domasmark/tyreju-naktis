@@ -17,19 +17,23 @@
 
 		<div id="holder">
 			<!--Top bar for List Menu witch 'back' and 'switch' buttons-->
-			<div id="top" ontouchmove="blockMove()">
-				<div id="header">
-					<div id="back"  onclick="back();">Atgal</div><div id="toptitle">title</div>
+			<div id="top">
+				<div class="header">
+					<div class="back">Atgal</div><div>Programa</div>
 				</div>
 				<div id="switch">
 					<div id="btncity">Miestai</div>
 					<div id="btnuni">Universitetai</div>
 				</div>
 			</div>
+			<div id="top2">
+				<div class="header">
+					<div class="back">Atgal</div><div id="toptitle"></div>
+				</div>
+			</div>
 
 			<div id="logo"></div>
 			<!--List Content-->
-			<div id="mapcontent"></div>
 			<div id="content">
 				<!--City List-->
 				<ul id="citylist">
@@ -39,6 +43,28 @@
 				<ul id="unilist">
 
 				</ul>
+			</div>
+			<div id="mapcontent"></div>
+			<div id="gamecontent">
+				<div id="gameon">
+					<p>Surink 5 kodus ir gauk prizą! Kodų ieškok renginių vietose.</p>
+					<p>Tau dar liko rasti <span>2</span> kodus, kad gautum nuorodą, kur galėsi atsiimti prizą.</p>
+					<p>Įvesti kodą:</p>
+					<input class="codeinput" maxlength="8" type="tel">
+					<button type="button" class="ok">OK</button>
+					<p>Neteisingas kodas!</p>
+				</div>
+				<div id="gameover">
+					<p>Sveikinu! Tu surinkai reikiamą kodų skaičių.</p>
+					<p>Eik į Studentų g. 67 ir prašyk prizo.</p>
+					<div>
+						<iframe style="opacity:0.8" width="260" height="260" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.lt/maps/ms?msa=0&amp;msid=207538713107079141497.0004de7d82653cd062056&amp;ie=UTF8&amp;t=m&amp;ll=54.937186,23.994272&amp;spn=0,0&amp;output=embed">
+						</iframe>
+					</div>
+					<p>Įvesti atsiėmimo kodą:</p>
+					<input class="codeinput" maxlength="8" type="tel">
+					<button type="button" class="ok">OK</button>
+				</div>
 			</div>
 			<!--3 Main buttons-->
 			<div id="bottom">
