@@ -117,7 +117,7 @@ li {
 }
 #top {
 	z-index: 1;
-	left: 0;
+	left: 200%;
 	top: 0;
 	position: fixed;
 	width: 100%;
@@ -195,6 +195,7 @@ li {
 }
 #content {
 	z-index: 0;
+	left: 200%; /*onLoad invisible, usually 0*/
 	padding-top: 78px;
 	position: relative;
 	/*padding-bottom: 36px;*/
@@ -202,7 +203,7 @@ li {
 #mapcontent {
 	z-index: 0;
 	bottom: 0;
-	left: 0;
+	left: 200%; /*onLoad invisible, usually 0*/
 	position: absolute;
 	height: 100%;
 	width: 100%
@@ -210,7 +211,7 @@ li {
 #gamecontent {
 	z-index: 0;
 	top: 5%;
-	left: 0;
+	left: 200%; /*onLoad invisible, usually 0*/
 	padding-top: 80px;
 	position: relative;
 	height: 100%;
