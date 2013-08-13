@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>That's about it</title>
+  </head>
+  <body>
+	<div id="output">
+	
+	</div>
+  </body>
+  <script src="js/jquery.min.js"></script>
+  <script>
+	t = '<div id="listContainer"> <ul id="expList">';
+    $.getJSON('http://tnt.lanparty.lt/index.php').done(function(data) {
+		$.each(data.events, function(fieldName, fieldValue) {
+			//console.log(fieldValue.title);
+			//console.log(fieldValue.time);
+			//t += '<li><div class="title">'+fieldValue.title+'</div><div class="field-'+fieldValue.title+'" style="display:none;">'+fieldValue.time+'</div></li>';
+			t += '<li><div><a href="#" onclick="toggle_visibility(\'time-'+fieldValue.title+'\')" id="title-'+fieldValue.title+'">'+fieldValue.title+'</a></div><div id="time-'+fieldValue.title+'" style="display:none;">'+fieldValue.time+'</div></li>';
+			//$('#title-'+fieldValue.title).click(function() {
+			//	$('#field-'+fieldValue.title).toggle('slow', function() {
+			//		console.log("list animation complete");
+			//	});
+			//});
+		});
+		$('div#output').append(t+ '</ul></div>'); 
+    })
+	.fail(function( jqxhr, textStatus, error ) {
+		var err = textStatus + ', ' + error;
+		console.log( "Request Failed: " + err);
+	});
+  </script>
+  
+  <script type="text/javascript">
+<!--
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+//-->
+</script>
+</html>

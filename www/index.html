@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>Test Project</title>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/toggle.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+	</head>
+	<body>
+
+		<div id="holder">
+			<!--Top bar for List Menu witch 'back' and 'switch' buttons-->
+			<div id="top" ontouchmove="blockMove()">
+				<div id="header">
+					<div id="back"  onclick="back();">Atgal</div><div id="toptitle">title</div>
+				</div>
+				<div id="switch">
+					<div id="btncity">Miestai</div>
+					<div id="btnuni">Universitetai</div>
+				</div>
+			</div>
+
+			<div id="logo"></div>
+			<!--List Content-->
+			<div id="content">
+				<!--City List-->
+				<ul id="citylist">
+					
+				</ul>
+				<!--University list-->
+				<ul id="unilist">
+
+				</ul>
+			</div>
+			<!--3 Main buttons-->
+			<div id="bottom">
+				<a href="#list"><div class="button list">Programa</div></a>
+				<a href="#map"><div class="button map">Žemėlapis</div></a>
+				<a href="#game"><div class="button game">Žaidimas</div></a>
+			</div>
+
+		</div>
+		<script src="js/fillInData.js"></script>
+	</body>
+</html>

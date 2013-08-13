@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>Test Project</title>
+		<style type="text/css">
+			/*===================*/
+			/*=======RESET=======*/
+			/*===================*/
+			html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+				margin:0;
+				padding:0;
+				border:0;
+				outline:0;
+				font-size:100%;
+				vertical-align:baseline;
+				background:transparent;
+			}
+			body {
+				line-height: 1;
+			}ol, ul {
+				list-style:none;
+			}
+			blockquote, q {
+				quotes:none;
+				}
+			blockquote:before, blockquote:after, q:before, q:after {
+				content:'';
+				content:none;
+			} 
+			:focus {
+				outline:0;
+			}
+			ins{
+				text-decoration:none;
+			}
+			del{
+				text-decoration:line-through;
+			} 
+			table{
+				border-collapse:collapse;
+				border-spacing:0;
+			}
+
+			/*===================*/
+			/*=======MAIN========*/
+			/*===================*/
+
+			body, html {
+				background-color: #223651;
+				background-image: url(img/background.jpg);
+				background-repeat: repeat;
+				background-position: center;
+				background-attachment: fixed;
+				width: 100%;
+				height: 100%; /*MANDATORY*/
+				font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+				line-height: 200%;
+			}
+			#holder {
+				min-height: 100%;
+				position: relative;
+			}
+			#top {
+				left: 0; /*MANDATORY*/
+				top: 0; /*MANDATORY*/
+				position: fixed; /*MANDATORY*/
+				width: 100%;
+				height: 48px;
+				color: #FFFFFF;
+				font-size: 24px;
+				text-align: center;
+				border-top: solid #FFFFFF;
+				border-bottom: solid #FFFFFF;
+				border-width: thin;
+				background-color: rgba(34,54,81,0.7);
+			}
+			#logo {
+				background-image: url(img/logo.png);
+				background-repeat: no-repeat;
+				left: 50%; /*top left corner appears in the center */
+				margin-left: -82px; /*shifts to the left by half of logo*/
+				margin-top: 30px;
+				top: 0;
+				position: fixed;
+				width: 164px;
+				height: 80px;
+			}
+			#content {
+				padding-bottom: 36px; /*MANDATORY*/
+			}
+			#bottom {
+				left: 0; /*MANDATORY*/
+				bottom: 0; /*MANDATORY*/
+				position: fixed; /*MANDATORY*/
+				width: 100%;
+				/*height: 108px; /*MANDATORY*/
+			}
+			.button {
+				height: 96px;
+				width: 100%;
+				color: #FFFFFF;
+				font-size: 24px;
+				border-top: solid #a8a8a8;
+				border-width: thin;
+				background-color: rgba(34,54,81,0.7);
+			}
+			.button img {
+				margin: 26px;
+			}
+			.button:active {
+				background-color: rgba(34,54,81,0.9);
+			}
+			.icon {
+				left: 0;
+			}
+			img {
+				text-decoration: none;
+				border: none;
+			}
+			p {
+				font-family:'HelveticaNeue-UltraLight', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+				font-size: 36px;
+				margin: 15px;
+				line-height: 140%;
+				color: #FFFFFF;
+			}
+		</style>
+		<script type="text/javascript">
+			document.ontouchmove = function(event){
+ 			   event.preventDefault();
+			}
+		</script>
+	</head>
+	<body>
+		<div id="holder">
+			<!--<div id="top">Programa</div>-->
+			<div id="logo"></div>
+			<!--
+			<div id="content">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a ullamcorper erat. Ut magna est, aliquet at elementum sed, viverra id velit. Quisque dolor tellus, gravida eu semper nec, pretium a massa. Etiam suscipit quis leo id consectetur. Ut varius tortor vitae nulla feugiat, a cursus nisl laoreet. Nam diam quam, egestas non nibh quis, aliquet blandit eros. Nam auctor pharetra felis quis semper. Sed purus ligula, malesuada at augue eu, feugiat iaculis turpis. Aliquam nec mi malesuada, tempus metus hendrerit, dictum tortor. Cras pellentesque egestas ante eu lacinia. Nulla ut laoreet libero, vitae placerat purus. Sed sit amet purus vitae risus bibendum porttitor. Integer ipsum sem, hendrerit aliquam pellentesque eu, euismod a dolor. Phasellus at eros justo. Sed suscipit at metus vitae imperdiet.</p>
+				<p>Nam interdum justo eget nunc fermentum, non commodo lacus lobortis. Nullam dui felis, vestibulum sit amet convallis id, suscipit id odio. Phasellus iaculis enim et mauris mattis facilisis. In hac habitasse platea dictumst. Donec eu consectetur diam, id vulputate ipsum. Sed urna quam, aliquam id mauris gravida, laoreet vulputate sapien. Praesent justo tellus, fringilla vitae odio tempus, venenatis malesuada justo.</p>
+				<p>Aenean lobortis dui sit amet nulla blandit, aliquam gravida risus condimentum. Praesent laoreet velit in sapien euismod, ac placerat nunc venenatis. Nullam non lorem pharetra, pellentesque lorem in, euismod nibh. Quisque volutpat eros sit amet mi venenatis eleifend. Vivamus pretium sapien quis urna viverra pulvinar. Nunc faucibus accumsan aliquam. Donec faucibus quam sed erat aliquam mollis. Vestibulum in orci at libero molestie elementum.</p>
+				<p>Phasellus id diam lorem. Mauris fermentum nisi non justo malesuada vestibulum. Curabitur rutrum tempor diam, sit amet iaculis nulla cursus in. Nullam non egestas arcu. Morbi facilisis mauris urna. Praesent vulputate ligula nec urna lobortis, sit amet tristique elit rhoncus. Fusce id justo vitae massa volutpat condimentum ut vitae lorem. Vestibulum pharetra iaculis velit, eget interdum nisl feugiat vitae. Phasellus ut tristique dui. Etiam volutpat in urna eget molestie. Quisque non ultricies neque. Nam eu augue pretium, condimentum sapien quis, posuere massa. Integer tempor neque quis magna consectetur, eu sollicitudin est sodales.</p>
+			</div>
+		-->
+			<div id="bottom">
+				<a href="programa.html">
+					<div class="button">
+						<img class="icon" src="img/list.png" /><span>Programa</span>
+					</div>
+				</a>
+				<a href="zemelapis.html">
+					<div class="button">
+						<img class="icon" src="img/map.png" />Žemėlapis
+					</div>
+				</a>
+				<a href="#game">
+					<div class="button">
+						<img class="icon" src="img/game.png" />Žaidimas
+					</div>
+				</a>
+			</div>
+		</div>
+	</body>
+</html>

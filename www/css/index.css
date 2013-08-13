@@ -1,0 +1,245 @@
+/*===================*/
+/*=======RESET=======*/
+/*===================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+}
+body {
+	line-height: 1;
+}ol, ul {
+	list-style:none;
+}
+blockquote, q {
+	quotes:none;
+	}
+blockquote:before, blockquote:after, q:before, q:after {
+	content:'';
+	content:none;
+} 
+:focus {
+	outline:0;
+}
+ins{
+	text-decoration:none;
+}
+del{
+	text-decoration:line-through;
+} 
+table{
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+/*===================*/
+/*=======MAIN========*/
+/*===================*/
+
+body, html {
+	background-color: #223651;
+	background-image: url(../img/background.jpg);
+	background-position: 0 0;
+	background-repeat: repeat-y;
+	background-position: left top;
+	/*background-size: 960px 540px;*/
+	background-attachment: fixed;
+	width: 100%;
+	height: 100%;
+	font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+	line-height: 200%;
+}
+a {
+	text-decoration: none;
+}
+img {
+	text-decoration: none;
+	border: none;
+}
+p {
+	line-height: 1.5em;
+	color: #FFFFFF;
+	text-indent: 0;
+	padding-left: 30px;
+	padding-bottom: 20px;
+}
+ul {
+	width: 100%;
+	display: block;
+}
+li {
+	width: 100%;
+	min-height: 48px;
+	color: #FFFFFF;
+	font-size: 20px;
+	text-indent: 30px;
+	line-height: 2.4em;
+	
+}
+.list {
+	width: 100%;
+	min-height: 48px;
+	background-repeat: no-repeat;
+	background-image: url(../img/arrow-down.png);
+	background-position: 90% 50%;
+	background-size: 20px 12px;
+	background-color: rgba(34,54,81,0.9);
+	border-bottom: solid #FFFFFF;
+	border-width: thin;
+}
+.list:active {
+	background-color: rgba(34,54,81,0.7);
+}
+.list2 {
+	width: 100%;
+	background-repeat: no-repeat;
+	background-image: url(../img/arrow-down.png);
+	background-color: rgba(34,54,81,0.5);
+	background-position: 90% 50%;
+	background-size: 20px 12px;
+	border-bottom: solid #FFFFFF;
+	border-width: thin;
+}
+.list2:active {
+	background-color: rgba(34,54,81,0.9);
+}
+.title {
+	font-family:'HelveticaNeue-Medium', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+}
+#holder {
+	min-height: 100%;
+	position: relative;
+}
+#top {
+	z-index: 1;
+	left: 0;
+	top: 0;
+	position: fixed;
+	width: 100%;
+	color: #FFFFFF;
+	font-size: 20px;
+	text-align: center;
+	background-color: rgba(34,54,81,0.7);
+}
+#header {
+	text-align: center;
+	line-height: 2.4em;
+	height: 48px;
+	border-top: solid #FFFFFF;
+	border-width: thin;
+	font-family:'HelveticaNeue-Medium', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+}
+#back {
+	position: fixed;
+	height: 48px;
+	float: left;
+	margin: 0 0 0 10px;
+	padding-left: 20px;
+	line-height: 2.4em;
+	font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+	background-image: url(../img/arrow-left.png);
+	background-size: 12px 20px;
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+}
+#back:active {
+	opacity: 0.5;
+}
+#switch {
+	height: 30px;
+	line-height: 1.4em;
+}
+#btncity {
+	width: 49.999%; /*to fit right border*/
+	border-right: solid #FFFFFF;
+	border-top: solid #FFFFFF;
+	border-bottom: solid #FFFFFF;
+	border-width: thin;
+	float: left;
+}
+#btnuni {
+	width: 50%;
+	float: right;
+	border-top: solid #FFFFFF;
+	border-bottom: solid #FFFFFF;
+	border-width: thin;
+}
+#btncity:visited {
+	background-color: rgba(34,54,81,0.7);
+}
+#btnuni:visited {
+	background-color: rgba(34,54,81,0.7);
+}
+#btncity:active {
+	background-color: rgba(34,54,81,1.0);
+}
+#btnuni:active {
+	background-color: rgba(34,54,81,1.0);
+}
+#logo {
+	background-image: url(../img/logo.png);
+	background-repeat: no-repeat;
+	background-size: 157px 76px;
+	left: 50%; /*top left corner appears in the center */
+	margin-left: -82px; /*shifts to the left by half of logo*/
+	margin-top: 50px;
+	top: 0;
+	position: fixed;
+	width: 164px;
+	height: 80px;
+}
+#content {
+	z-index: 0;
+	padding-top: 78px;
+	position: relative;
+	/*padding-bottom: 36px;*/
+}
+#bottom {
+	z-index: 2;
+	left: 0;
+	bottom: 0;
+	position: fixed;
+	width: 100%;
+}
+.button {
+	height: 96px;
+	width: 100%;
+	color: #FFFFFF;
+	font-size: 24px;
+	line-height: 4em;
+	border-top: solid #a8a8a8;
+	border-width: thin;
+	text-align: center;
+	background-color: rgba(34,54,81,0.7);
+	background-repeat: no-repeat;
+}
+.button.list {
+	background-image:  url(../img/list.png), url(../img/arrow-right.png);
+	background-position: 10% 50%, 90% 50%;
+	background-size: 37px 37px, 12px 20px;
+}
+.button.map {
+	background-image:  url(../img/map.png), url(../img/arrow-right.png);
+	background-position: 10% 50%, 90% 50%;
+	background-size: 48px 40px, 12px 20px;
+}
+.button.game {
+	background-image:  url(../img/game.png), url(../img/arrow-right.png);
+	background-position: 10% 50%, 90% 50%;
+	background-size: 47px 34px, 12px 20px;
+}
+.button img {
+	float: left;
+	margin: 26px 0 0 26px;
+}
+.button.arrow {
+	float: right;
+}
+.button:active {
+	background-color: rgba(34,54,81,0.9);
+}
