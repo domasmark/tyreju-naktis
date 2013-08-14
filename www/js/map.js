@@ -12,6 +12,7 @@ function initializeMap(latCenter, lonCenter, zoomLevel, geoLocated) {
 		var mapOptions = {
 		  center : new google.maps.LatLng(latCenter, lonCenter),
 		  zoom: zoomLevel,
+		  disableDefaultUI: true,
 		  mapTypeId: google.maps.MapTypeId.ROADMAP
 		  };
 		var map = new google.maps.Map(document.getElementById("mapcontent"),
@@ -20,7 +21,8 @@ function initializeMap(latCenter, lonCenter, zoomLevel, geoLocated) {
 		var marker = new google.maps.Marker({
 			position: new google.maps.LatLng(latCenter, lonCenter),
 			map: map,
-			title:"Your position",
+			title:"Tu esi čia",
+			animation: google.maps.Animation.DROP,
 			clickable: true,
 			icon: { path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW, scale:6 }
 			
@@ -46,7 +48,7 @@ function initializeMap(latCenter, lonCenter, zoomLevel, geoLocated) {
 				map: map,
 				title: pavadinimas,
 				clickable: true,
-				icon: { path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW, scale:6 }
+				icon: { path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW, scale:7 }
 			});
 			
 			(function(aId, aZonatag, aMiestastag) {
@@ -79,14 +81,7 @@ function initializeMap(latCenter, lonCenter, zoomLevel, geoLocated) {
 					{ color: '#ffffff' }, {weight: 1.0}
 				]
 			}, {
-				featureType: 'road',
-				elementType: 'labels',
-				stylers: [
-					{ color: '#000055' }, {weight: 0.2}
-				]
-			}, {
 				featureType: 'poi',
-				elementType: 'labels',
 				stylers: [
 					{ visibility: 'off' }
 				]
@@ -102,15 +97,59 @@ function initializeMap(latCenter, lonCenter, zoomLevel, geoLocated) {
 				stylers: [
 					{ visibility: 'off' }
 				]
-			}
-			
+			}, {
+    			featureType: 'water',
+    			stylers: [
+     		 	{ color: '#000000' }, {weight: 1.0}
+   			 	]
+  			},{
+			    featureType: 'landscape.natural',
+			    stylers: [
+			      { color: '#000053' }
+			    ]
+			  },{
+			    featureType: 'landscape.man_made',
+			    stylers: [
+			      { color: '#243661' }
+			    ]
+			  },{
+			    featureType: 'road',
+			    elementType: 'labels.text.stroke',
+			    stylers: [
+			      { color: '#ffffff' }, {weight: 2.0}
+			    ]
+			  },{
+			    featureType: 'road',
+			    elementType: 'labels.text.fill',
+			    stylers: [
+			      { color: '#000000' }
+			    ]
+			  },{
+			    featureType: 'administrative',
+			    elementType: 'labels.text.fill',
+			    stylers: [
+			      { color: '#ffffff' }
+			    ]
+			  },{
+			    featureType: 'administrative',
+			    elementType: 'labels.text.stroke',
+			    stylers: [
+			      { color: '#000000' }
+			    ]
+			  },{
+			    featureType: 'road.arterial',
+			    elementType: 'labels.icon',
+			    stylers: [
+			      { visibility: 'off' }
+			    ]
+			  }
 			]);
 };
 
 // onError Callback receives a PositionError object
 //
 function onError(error) {
-	initializeMap(55.222757,23.939209, 7, false);
+	initializeMap(54.892603,23.968735, 12, false);
 	//if (PositionError.PERMISSION_DENIED == error.code)
 		//alert('geolocation permission not granted');
 		//navigator.notification.alert('geolocation permission not granted', function(){});
