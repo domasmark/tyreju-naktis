@@ -2,8 +2,8 @@ var speed = 'fast';
 $(document).ready(function() {
 	//onLoad
 	$('#content').hide();
-	//$('#mapcontent').hide();
-	$("#mapcontent").css({ opacity: 0.0 });
+	$('#mapcontent').hide();
+	//$("#mapcontent").css({ opacity: 0.0 });
 	$('#gamecontent').hide();
 	$('#top').hide();
 	$('#top2').hide();
@@ -46,7 +46,7 @@ $(document).ready(function() {
 function menuList() {
 	$('#top').show();
 	$('#content').show();
-	$('#mapcontent').hide();
+	//$('#mapcontent').hide();
 	$("#bottom").animate({left:"-200%"},speed);
 	$("#logo").animate({left:"-200%"},speed);
 	$("#top").animate({left:"0"},speed);
@@ -56,21 +56,25 @@ function menuList() {
 function menuMap() {
 	$('#top2').show();
 	$('#mapcontent').show();
-	$("#mapcontent").css({ opacity: 0.7 });
+	//$("#mapcontent").css({ opacity: 0.7 });
 	$("#bottom").animate({left:"-200%"},speed);
 	$("#logo").animate({left:"-200%"},speed);
 	$("#toptitle").html("Žemėlapis");
 	$("#top2").animate({left:"0"},speed);
 	$("#mapcontent").animate({left:"0"},speed);
-	//google.maps.event.trigger(map, 'resize');
+	google.maps.event.trigger(map, 'resize');
 	//var center = new google.maps.LatLng(myLat, myLon);
 	//map.panTo(center);
+	//x=window.innerHeight||document.documentElement.clientWidth||document.getElementsByTagName("body")[0].clientWidth;
+	//y=window.innerHeight||document.documentElement.clientHeight||document.getElementsByTagName("body")[0].clientHeight;
+	//$("#mapcontent").css("width", x);
+	//$("#mapcontent").css("height", y);
 };
 
 function menuGame() {
 	$('#top2').show();
 	$('#gamecontent').show();
-	$('#mapcontent').hide();
+	//$('#mapcontent').hide();
 	$("#bottom").animate({left:"-200%"},speed);
 	$("#logo").animate({left:"-200%"},speed);
 	$("#toptitle").html("Žaidimas");
