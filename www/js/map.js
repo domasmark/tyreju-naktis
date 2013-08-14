@@ -1,6 +1,6 @@
 var map;
-var myLat;
-var myLon;
+var myLat = 54.892603;
+var myLon = 23.968735;
 function initialize() {
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
