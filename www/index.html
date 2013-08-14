@@ -48,11 +48,12 @@
 			<div id="mapcontent"></div>
 			<div id="gamecontent">
 				<div id="gameon">
-					<p>Surink 5 kodus ir gauk prizą! Kodų ieškok renginių vietose.</p>
+					<p>Surink <span id="required-codes">5</span> kodus ir gauk prizą! Kodų ieškok renginių vietose.</p>
 					<p>Tau dar liko rasti <span id="code-counter"></span> kodus, kad gautum nuorodą, kur galėsi atsiimti prizą.</p>
 					<p>Įvesti kodą:</p>
 					<input class="codeinput" id="codeinputfield" maxlength="8" type="tel">
 					<button type="button" class="ok" onclick="enterCode()">OK</button>
+					<button onclick="emptyCodes()">Clear registry</button>
 					</form>
 					<p id="statusfield"></p>
 				</div>
@@ -63,9 +64,10 @@
 						<iframe style="opacity:0.8" width="260" height="260" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.lt/maps/ms?msa=0&amp;msid=207538713107079141497.0004de7d82653cd062056&amp;ie=UTF8&amp;t=m&amp;ll=54.937186,23.994272&amp;spn=0,0&amp;output=embed">
 						</iframe>
 					</div>
-					<p>Įvesti atsiėmimo kodą:</p>
+					<button onclick="emptyCodes()">Clear registry</button>
+					<!--<p>Įvesti atsiėmimo kodą:</p>
 					<input class="codeinput" maxlength="8" type="tel">
-					<button type="button" class="ok">OK</button>
+					<button type="button" class="ok">OK</button> -->
 				</div>
 			</div>
 			<!--3 Main buttons-->
