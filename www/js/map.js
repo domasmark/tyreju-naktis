@@ -13,6 +13,7 @@ function initializeMap(latCenter, lonCenter, zoomLevel, geoLocated) {
 		  center : new google.maps.LatLng(latCenter, lonCenter),
 		  zoom: zoomLevel,
 		  disableDefaultUI: true,
+		  backgroundColor: 'none',
 		  mapTypeId: google.maps.MapTypeId.ROADMAP
 		  };
 		var map = new google.maps.Map(document.getElementById("mapcontent"),

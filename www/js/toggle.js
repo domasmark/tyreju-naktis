@@ -2,7 +2,7 @@ var speed = 'fast';
 $(document).ready(function() {
 	//onLoad
 	$('#content').hide();
-	$('#mapcontent').hide();
+	//$('#mapcontent').show();
 	$('#gamecontent').hide();
 	$('#top').hide();
 	$('#top2').hide();
