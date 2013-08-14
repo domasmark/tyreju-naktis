@@ -59,9 +59,9 @@ addOnloadEvent(function() {
 			eventHTML += '<p>'+universitetas+'</p>\n';
 			eventHTML += '<p>'+turinys+'</p>\n';
 			eventHTML += '<div>\n';
-			eventHTML += '<iframe style="opacity:0.8" width="260" height="260" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="';
-			eventHTML += 'https://maps.google.lt/maps/ms?msa=0&msid=207538713107079141497.0004de7d82653cd062056&ie=UTF8&t=m&ll='+zemelapis+'&spn=0,0&output=embed">\n</iframe>\n</div>';
-			eventHTML += '<button onclick="goToMap(\''+zemelapis+'\')">Į žemėlapį</button>';
+			//eventHTML += '<iframe style="opacity:0.8" width="260" height="260" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="';
+			//eventHTML += 'https://maps.google.lt/maps/ms?msa=0&msid=207538713107079141497.0004de7d82653cd062056&ie=UTF8&t=m&ll='+zemelapis+'&spn=0,0&output=embed">\n</iframe>\n</div>';
+			eventHTML += '<button onclick="goToMap(\''+zemelapis+'\')">Į žemėlapį</button></div>';
 			eventHTML += '</div>';
 			
 			var zoneDiv = document.getElementById('events-of-'+miestastag+'-'+zonatag);
@@ -74,8 +74,9 @@ addOnloadEvent(function() {
 			eventHTML += '<p>'+miestas+'</p>\n';
 			eventHTML += '<p>'+turinys+'</p>\n';
 			eventHTML += '<div>\n';
-			eventHTML += '<iframe style="opacity:0.8" width="260" height="260" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="';
-			eventHTML += 'https://maps.google.lt/maps/ms?msa=0&msid=207538713107079141497.0004de7d82653cd062056&ie=UTF8&t=m&ll='+zemelapis+'&spn=0,0&output=embed">\n</iframe>\n</div>';
+			//eventHTML += '<iframe style="opacity:0.8" width="260" height="260" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="';
+			//eventHTML += 'https://maps.google.lt/maps/ms?msa=0&msid=207538713107079141497.0004de7d82653cd062056&ie=UTF8&t=m&ll='+zemelapis+'&spn=0,0&output=embed">\n</iframe>\n</div>';
+			eventHTML += '<button onclick="goToMap(\''+zemelapis+'\')">Į žemėlapį</button></div>';
 			eventHTML += '</div>';
 			
 			var zoneDiv = document.getElementById('events-of-'+unitag+'-'+zonatag);
