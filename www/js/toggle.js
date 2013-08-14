@@ -2,7 +2,8 @@ var speed = 'fast';
 $(document).ready(function() {
 	//onLoad
 	$('#content').hide();
-	$('#mapcontent').hide();
+	//$('#mapcontent').hide();
+	$("#mapcontent").css({ opacity: 0.0 });
 	$('#gamecontent').hide();
 	$('#top').hide();
 	$('#top2').hide();
@@ -45,6 +46,7 @@ $(document).ready(function() {
 function menuList() {
 	$('#top').show();
 	$('#content').show();
+	$('#mapcontent').hide();
 	$("#bottom").animate({left:"-200%"},speed);
 	$("#logo").animate({left:"-200%"},speed);
 	$("#top").animate({left:"0"},speed);
@@ -54,6 +56,7 @@ function menuList() {
 function menuMap() {
 	$('#top2').show();
 	$('#mapcontent').show();
+	$("#mapcontent").css({ opacity: 0.7 });
 	$("#bottom").animate({left:"-200%"},speed);
 	$("#logo").animate({left:"-200%"},speed);
 	$("#toptitle").html("Žemėlapis");
@@ -67,6 +70,7 @@ function menuMap() {
 function menuGame() {
 	$('#top2').show();
 	$('#gamecontent').show();
+	$('#mapcontent').hide();
 	$("#bottom").animate({left:"-200%"},speed);
 	$("#logo").animate({left:"-200%"},speed);
 	$("#toptitle").html("Žaidimas");
