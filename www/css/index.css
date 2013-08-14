@@ -174,7 +174,8 @@ li {
 	line-height: 1.4em;
 }
 #btncity {
-	width: 49.999%; /*to fit right border*/
+	max-width: 50%; /*to fit right border*/
+	min-width: 49.9%;
 	border-right: solid #FFFFFF;
 	border-top: solid #FFFFFF;
 	border-bottom: solid #FFFFFF;
