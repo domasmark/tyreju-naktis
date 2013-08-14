@@ -2,7 +2,7 @@ var speed = 'fast';
 $(document).ready(function() {
 	//onLoad
 	$('#content').hide();
-	//$('#mapcontent').show();
+	$('#mapcontent').hide();
 	$('#gamecontent').hide();
 	$('#top').hide();
 	$('#top2').hide();
@@ -59,6 +59,9 @@ function menuMap() {
 	$("#toptitle").html("Žemėlapis");
 	$("#top2").animate({left:"0"},speed);
 	$("#mapcontent").animate({left:"0"},speed);
+	google.maps.event.trigger(map, 'resize');
+	var center = new google.maps.LatLng(myLat, myLon);
+    map.panTo(center);
 };
 
 function menuGame() {

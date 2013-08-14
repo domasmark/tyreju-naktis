@@ -1,9 +1,13 @@
 var map;
+var myLat;
+var myLon;
 function initialize() {
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 
 var onSuccess = function(position) {
+	myLat = position.coords.latitude;
+	myLon = position.coords.longitude;
 	initializeMap(position.coords.latitude, position.coords.longitude, 14, true);
 
 };
@@ -170,7 +174,6 @@ function goToMap(coords) {
 	var lat = parseFloat(gpsposition[0]);
 	var lon = parseFloat(gpsposition[1]);
 	var center = new google.maps.LatLng(lat, lon);
-    // using global variable:
     map.panTo(center);
 }
 
