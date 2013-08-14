@@ -4,21 +4,28 @@ function initialize() {
 }
 
 var onSuccess = function(position) {
-		  var mapOptions = {
-		  center : new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-		  zoom: 14,
+	initializeMap(position.coords.latitude, position.coords.longitude, 14, true);
+
+};
+
+function initializeMap(latCenter, lonCenter, zoomLevel, geoLocated) {
+		var mapOptions = {
+		  center : new google.maps.LatLng(latCenter, lonCenter),
+		  zoom: zoomLevel,
 		  mapTypeId: google.maps.MapTypeId.ROADMAP
 		  };
-		  var map = new google.maps.Map(document.getElementById("mapcontent"),
+		var map = new google.maps.Map(document.getElementById("mapcontent"),
 			mapOptions);
+		if (geoLocated) {
 		var marker = new google.maps.Marker({
-			position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+			position: new google.maps.LatLng(latCenter, lonCenter),
 			map: map,
 			title:"Your position",
 			clickable: true,
 			icon: { path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW, scale:6 }
 			
 		});
+		}
 		
 		
 		// creating event markers
@@ -103,6 +110,7 @@ var onSuccess = function(position) {
 // onError Callback receives a PositionError object
 //
 function onError(error) {
+	initializeMap(55.222757,23.939209, 7, false);
 	//if (PositionError.PERMISSION_DENIED == error.code)
 		//alert('geolocation permission not granted');
 		//navigator.notification.alert('geolocation permission not granted', function(){});
