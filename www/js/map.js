@@ -16,23 +16,24 @@ function initializeMap(latCenter, lonCenter, zoomLevel, geoLocated) {
 		  backgroundColor: 'none',
 		  mapTypeId: google.maps.MapTypeId.ROADMAP
 		  };
-		var map = new google.maps.Map(document.getElementById("mapcontent"),
+		map = new google.maps.Map(document.getElementById("mapcontent"),
 			mapOptions);
 		if (geoLocated) {
-		var marker = new google.maps.Marker({
-			position: new google.maps.LatLng(latCenter, lonCenter),
-			map: map,
-			title:"Tu esi čia",
-			animation: google.maps.Animation.DROP,
-			clickable: true,
-			icon: { path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW, scale:6 }
-			
-		});
+			var marker = new google.maps.Marker({
+				position: new google.maps.LatLng(latCenter, lonCenter),
+				map: map,
+				title:"Tu esi čia",
+				animation: google.maps.Animation.DROP,
+				clickable: true,
+				icon: 'img/pin-your.png'
+				
+			});
 		}
 		
 		
 		// creating event markers
 		for (var i = 0; i < eventsArray.length; i++) {
+			console.log('adding marker for event '+id);
 			var event = eventsArray[i];
 			var id = event.id;
 			var pavadinimas = event.pavadinimas;
@@ -49,7 +50,7 @@ function initializeMap(latCenter, lonCenter, zoomLevel, geoLocated) {
 				map: map,
 				title: pavadinimas,
 				clickable: true,
-				icon: { path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW, scale:7 }
+				icon: 'img/pin.png'
 			});
 			
 			(function(aId, aZonatag, aMiestastag) {
@@ -160,6 +161,17 @@ function onError(error) {
 	//if (PositionError.TIMEOUT = error.code)
 		//alert('geolocation timeout');
 		//navigator.notification.alert('geolocation timeout', function(){});
+}
+
+function goToMap(coords) {
+	menuBack();
+	menuMap();
+	var gpsposition = coords.split(',');
+	var lat = parseFloat(gpsposition[0]);
+	var lon = parseFloat(gpsposition[1]);
+	var center = new google.maps.LatLng(lat, lon);
+    // using global variable:
+    map.panTo(center);
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
