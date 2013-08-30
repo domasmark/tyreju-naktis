@@ -24,7 +24,7 @@ $(document).ready(function() {
 
 	//List Menu back button
 	//funtion for android back button
-	//document.addEventListener("backbutton", onBackKeyDown, false);
+	document.addEventListener("backbutton", menuBack(), true);
 	//var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
 	$(".back").click(function(){
 		menuBack();
