@@ -37,9 +37,9 @@ function initializeMap(latCenter, lonCenter, zoomLevel, geoLocated) {
 		
 		// creating event markers
 		for (var i = 0; i < eventsArray.length; i++) {
-			console.log('adding marker for event '+id);
 			var event = eventsArray[i];
 			var id = event.id;
+			console.log('adding marker for event '+id);
 			var pavadinimas = event.pavadinimas;
 			var miestastag = event.miestas.toLowerCase().replace(/\s+/g, '');
 			var zonatag = event.zona.toLowerCase().replace(/\s+/g, '');
