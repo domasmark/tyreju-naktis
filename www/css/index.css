@@ -122,6 +122,16 @@ li {
 }
 .title {
 	font-family:'HelveticaNeue-Medium', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+	user-select: none;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+}
+.time {
+	user-select: none;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
 }
 #holder {
 	min-height: 100%;

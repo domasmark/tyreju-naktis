@@ -58,7 +58,7 @@ addOnloadEvent(function() {
 				
 				eventHTML += '<div id="event-'+id+'">\n';
 				eventHTML += '<div class="title">'+pavadinimas+'</div>\n';
-				eventHTML += '<div>'+laikas+'</div>\n'
+				eventHTML += '<div class="time">'+laikas+'</div>\n'
 				eventHTML += '<p>'+universitetas+'</p>\n';
 				eventHTML += '<p>'+turinys+'</p>\n';
 				eventHTML += '<div>\n';
@@ -73,7 +73,7 @@ addOnloadEvent(function() {
 				eventHTML = '';
 				eventHTML += '<div id="event-'+id+'">\n';
 				eventHTML += '<div class="title">'+pavadinimas+'</div>\n';
-				eventHTML += '<div>'+laikas+'</div>\n'
+				eventHTML += '<div class="time">'+laikas+'</div>\n'
 				eventHTML += '<p>'+miestas+'</p>\n';
 				eventHTML += '<p>'+turinys+'</p>\n';
 				eventHTML += '<div>\n';
@@ -144,7 +144,7 @@ addOnloadEvent(function() {
 				
 				eventHTML += '<div id="event-'+id+'">\n';
 				eventHTML += '<div class="title">'+pavadinimas+'</div>\n';
-				eventHTML += '<div>'+laikas+'</div>\n'
+				eventHTML += '<div class="time">'+laikas+'</div>\n'
 				eventHTML += '<p>'+universitetas+'</p>\n';
 				eventHTML += '<p>'+turinys+'</p>\n';
 				eventHTML += '<div>\n';
@@ -159,7 +159,7 @@ addOnloadEvent(function() {
 				eventHTML = '';
 				eventHTML += '<div id="event-'+id+'">\n';
 				eventHTML += '<div class="title">'+pavadinimas+'</div>\n';
-				eventHTML += '<div>'+laikas+'</div>\n'
+				eventHTML += '<div class="time">'+laikas+'</div>\n'
 				eventHTML += '<p>'+miestas+'</p>\n';
 				eventHTML += '<p>'+turinys+'</p>\n';
 				eventHTML += '<div>\n';
