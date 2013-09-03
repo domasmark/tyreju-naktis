@@ -3,11 +3,11 @@ function enterCode() {
 	
 	var code = document.getElementById('codeinputfield').value;
 	var availableCodes = new Array();
-	availableCodes[0] = "labas";
-	availableCodes[1] = "rytas";
-	availableCodes[2] = "drauge";
-	availableCodes[3] = "trys";
-	availableCodes[4] = "penki";
+	availableCodes[0] = "354795";
+	availableCodes[1] = "111536";
+	availableCodes[2] = "965742";
+	availableCodes[3] = "128795";
+	availableCodes[4] = "635474";
 	for (var i=0;i<availableCodes.length;i++)
 	{ 
 		if (code.toLowerCase() == availableCodes[i]) {

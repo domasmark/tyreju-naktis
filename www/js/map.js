@@ -1,6 +1,6 @@
 var map;
-var myLat = 54.892603;
-var myLon = 23.968735;
+var myLat = 55.174495;
+var myLon = 23.883325;
 function initialize() {
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
@@ -155,7 +155,7 @@ function initializeMap(latCenter, lonCenter, zoomLevel, geoLocated) {
 // onError Callback receives a PositionError object
 //
 function onError(error) {
-	initializeMap(54.892603,23.968735, 12, false);
+	initializeMap(55.174495,23.883325, 8, false);
 	//if (PositionError.PERMISSION_DENIED == error.code)
 		//alert('geolocation permission not granted');
 		//navigator.notification.alert('geolocation permission not granted', function(){});
