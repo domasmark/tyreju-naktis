@@ -21,6 +21,9 @@ $(document).ready(function() {
 	$(".button.game").click(function(){
 		menuGame();
 	});
+	/*$(".button.facebook").click(function(){
+		menuFacebook();
+	});*/
 
 	//List Menu back button
 	//funtion for android back button
@@ -74,13 +77,21 @@ function menuMap() {
 function menuGame() {
 	$('#top2').show();
 	$('#gamecontent').show();
-	//$('#mapcontent').hide();
 	$("#bottom").animate({left:"-200%"},speed);
 	$("#logo").animate({left:"-200%"},speed);
 	$("#toptitle").html("Žaidimas");
 	$("#top2").animate({left:"0"},speed);
 	$("#gamecontent").animate({left:"0"},speed);
 };
+/*function menuFacebook() {
+	$('#top2').show();
+	$('#adcontent').show();
+	$("#bottom").animate({left:"-200%"},speed);
+	$("#logo").animate({left:"-200%"},speed);
+	$("#toptitle").html("Reklama");
+	$("#top2").animate({left:"0"},speed);
+	$("#adcontent").animate({left:"0"},speed);
+};*/
 
 function menuBack() {
 	$('#top').hide();
@@ -88,6 +99,7 @@ function menuBack() {
 	$('#content').hide();
 	$('#mapcontent').hide();
 	$('#gamecontent').hide();
+	$('#adcontent').hide();
 	$("#top").animate({left:"200%"},speed);
 	$("#content").animate({left:"200%"},speed);
 	$("#mapcontent").animate({left:"200%"},speed);

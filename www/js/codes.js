@@ -1,6 +1,7 @@
 ﻿var codesRequired = 5;
 function enterCode() {
 	
+	$('#top2').css('top', '0');
 	var code = document.getElementById('codeinputfield').value;
 	var availableCodes = new Array();
 	availableCodes[0] = "354795";

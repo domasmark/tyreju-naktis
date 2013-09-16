@@ -14,6 +14,11 @@
     	<script src="js/map.js"></script>
 		<script src="js/codes.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script type="text/javascript">
+			function checking() {
+		    	alert(device.platform);
+	    	}
+		</script>
 	</head>
 	<body>
 
@@ -25,7 +30,7 @@
 				</div>
 				<div id="switch">
 					<div id="btncity">Miestai</div>
-					<div id="btnuni">Universitetai</div>
+					<div id="btnuni">Renginių vietos</div>
 				</div>
 			</div>
 			<div id="top2">
@@ -71,13 +76,15 @@
 					<button type="button" class="ok">OK</button> -->
 				</div>
 			</div>
+			<div id="adcontent"><iframe src="http://www.loopaloo.com/adlink.php"></iframe></div>
 			<!--3 Main buttons-->
 			<div id="bottom">
 				<a href="#list"><div class="button list">Programa</div></a>
 				<a href="#map"><div class="button map">Žemėlapis</div></a>
 				<a href="#game"><div class="button game">Žaidimas</div></a>
+				<a href="https://facebook.com/tyrejunaktis#phonegap=external"><div class="button facebook">Facebook</div></a>
 			</div>
-
+			<!--<a href="#adlink"><div id="ad" onclick="openURL();"></div></a>-->
 		</div>
 	</body>
 </html>

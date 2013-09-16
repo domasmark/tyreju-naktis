@@ -36,6 +36,10 @@ table{
 	border-collapse:collapse;
 	border-spacing:0;
 }
+iframe {
+	width: 100%;
+	height: 100%;
+}
 
 /*===================*/
 /*=======MAIN========*/
@@ -278,6 +282,11 @@ li {
 	-khtml-user-select: none;
 	-webkit-user-select: none;
 }
+#adcontent {
+	display: none;
+	width: 100%;
+	height: 100%;
+}
 .mapbtn {
 	border-radius: 0;
 	padding: 0;
@@ -334,6 +343,7 @@ li {
 	bottom: 0;
 	position: fixed;
 	width: 100%;
+	margin-bottom: 0;
 }
 .button {
 	height: 96px;
@@ -365,6 +375,16 @@ li {
 	background-position: 10% 50%, 90% 50%;
 	background-size: 47px 34px, 12px 20px;
 }
+.button.facebook {
+	height: 48px;
+	line-height: 2em;
+	border-top: solid #FFFFFF;
+	border-width: thin;
+	background-color: rgba(94,114,141,0.7);
+	background-image:  url(../img/facebook.png), url(../img/arrow-right.png);
+	background-position: 10% 50%, 90% 50%;
+	background-size: 30px 30px, 12px 20px;
+}
 .button img {
 	float: left;
 	margin: 26px 0 0 26px;
@@ -374,4 +394,16 @@ li {
 }
 .button:active {
 	background-color: rgba(34,54,81,0.9);
+}
+#ad {
+	z-index: 2;
+	width: 100%;
+	height: 40px;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	margin-top: -80px;
+	background-image: url(http://www.loopaloo.com/ad.png);
+	background-size: 320px 40px;
+	background-repeat: repeat;
 }
