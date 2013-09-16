@@ -1,5 +1,25 @@
-﻿var dataJSONlocation = 'http://tnt.lanparty.lt/index.php';
+﻿var dataJSONlocation = 'http://tnt.lanparty.lt';
+//var dataJSONlocation = 'http://www.xn--tyrjnaktis-tmb91i.lt/13metu_json&showtemplate=false';
 var eventsArray = new Array();
+
+function string_to_slug(str) {
+  str = str.replace(/^\s+|\s+$/g, ''); // trim
+  str = str.toLowerCase();
+  
+  // remove accents, swap ñ for n, etc
+  var from = "àáäâèéëêìíïîòóöôùúüûñçąčęėįšųūž·/_,:;";
+  var to   = "aaaaeeeeiiiioooouuuuncaceeisuuz------";
+  for (var i=0, l=from.length ; i<l ; i++) {
+    str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+  }
+
+  str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+    .replace(/\s+/g, '-') // collapse whitespace and replace by -
+    .replace(/-+/g, '-'); // collapse dashes
+
+  return str;
+}
+
 addOnloadEvent(function() {
 
 	$.ajax({
@@ -9,6 +29,8 @@ addOnloadEvent(function() {
 		success: function(data) {
 			var db = window.localStorage;
 			var localJSON = db.setItem("localJSON", JSON.stringify(data));
+			console.log(data.events.length);
+			
 			$.each(data.events, function(fieldName, fieldValue) {
 				eventsArray.push(fieldValue);
 				var id = fieldValue.id;
@@ -19,13 +41,13 @@ addOnloadEvent(function() {
 				
 				
 				var universitetas = fieldValue.universitetas;
-				var unitag = universitetas.toLowerCase().replace(/\s+/g, '');
+				var unitag = string_to_slug(universitetas);
 				
 				var zona = fieldValue.zona;
-				var zonatag = zona.toLowerCase().replace(/\s+/g, '');
+				var zonatag = string_to_slug(zona);
 				
 				var miestas = fieldValue.miestas;
-				var miestastag = miestas.toLowerCase().replace(/\s+/g, '');
+				var miestastag = string_to_slug(miestas);
 				
 				
 				if (document.getElementById('city-'+miestastag) == null) {
@@ -69,7 +91,7 @@ addOnloadEvent(function() {
 				
 				var zoneDiv = document.getElementById('events-of-'+miestastag+'-'+zonatag);
 				zoneDiv.insertAdjacentHTML('afterBegin', eventHTML);
-
+				console.log(eventHTML);
 				eventHTML = '';
 				eventHTML += '<div id="event-'+id+'">\n';
 				eventHTML += '<div class="title">'+pavadinimas+'</div>\n';
