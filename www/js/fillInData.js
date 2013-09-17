@@ -20,6 +20,14 @@ function string_to_slug(str) {
   return str;
 }
 
+function removeTags(str) {
+	var regex = /(<([^>]+)>)/ig;
+	var temp = str.replace(/&lt;/g, "<");
+	temp = temp.replace(/&gt;/g, ">");
+	var result = temp.replace(regex, "");
+	return result;
+}
+
 addOnloadEvent(function() {
 
 	$.ajax({
@@ -30,14 +38,17 @@ addOnloadEvent(function() {
 			var db = window.localStorage;
 			var localJSON = db.setItem("localJSON", JSON.stringify(data));
 			console.log(data.events.length);
-			
+			console.log("<p>something</something>");
+			console.log(removeTags("<p>something</something>"));
+			var i = 0;
 			$.each(data.events, function(fieldName, fieldValue) {
+				console.log(++i);
 				eventsArray.push(fieldValue);
 				var id = fieldValue.id;
-				var pavadinimas = fieldValue.pavadinimas;
+				var pavadinimas = removeTags(fieldValue.pavadinimas);
 				var laikas = fieldValue.laikas;
 				var zemelapis = fieldValue.zemelapis;
-				var turinys = fieldValue.turinys;
+				var turinys = removeTags(fieldValue.turinys);
 				
 				
 				var universitetas = fieldValue.universitetas;
@@ -91,7 +102,6 @@ addOnloadEvent(function() {
 				
 				var zoneDiv = document.getElementById('events-of-'+miestastag+'-'+zonatag);
 				zoneDiv.insertAdjacentHTML('afterBegin', eventHTML);
-				console.log(eventHTML);
 				eventHTML = '';
 				eventHTML += '<div id="event-'+id+'">\n';
 				eventHTML += '<div class="title">'+pavadinimas+'</div>\n';
@@ -120,20 +130,20 @@ addOnloadEvent(function() {
 			$.each(data.events, function(fieldName, fieldValue) {
 				eventsArray.push(fieldValue);
 				var id = fieldValue.id;
-				var pavadinimas = fieldValue.pavadinimas;
+				var pavadinimas = removeTags(fieldValue.pavadinimas);
 				var laikas = fieldValue.laikas;
-				var zemelapis = fieldValue.zemelapis;
+				var zemelapis = removeTags(fieldValue.zemelapis);
 				var turinys = fieldValue.turinys;
 				
 				
 				var universitetas = fieldValue.universitetas;
-				var unitag = universitetas.toLowerCase().replace(/\s+/g, '');
+				var unitag = string_to_slug(universitetas);
 				
 				var zona = fieldValue.zona;
-				var zonatag = zona.toLowerCase().replace(/\s+/g, '');
+				var zonatag = string_to_slug(zona);
 				
 				var miestas = fieldValue.miestas;
-				var miestastag = miestas.toLowerCase().replace(/\s+/g, '');
+				var miestastag = string_to_slug(miestas);
 				
 				
 				if (document.getElementById('city-'+miestastag) == null) {
