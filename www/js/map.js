@@ -175,6 +175,7 @@ function goToMap(coords) {
 	var lon = parseFloat(gpsposition[1]);
 	var center = new google.maps.LatLng(lat, lon);
     map.panTo(center);
+    map.setZoom(18);
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);

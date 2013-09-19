@@ -14,11 +14,6 @@
     	<script src="js/map.js"></script>
 		<script src="js/codes.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
-		<script type="text/javascript">
-			function checking() {
-		    	alert(device.platform);
-	    	}
-		</script>
 	</head>
 	<body>
 
@@ -54,38 +49,32 @@
 			<div id="mapcontent"></div>
 			<div id="gamecontent">
 				<div id="gameon">
+					<input class="codeinput" value="įvesti kodą" id="codeinputfield" maxlength="8" type="tel" onblur="if (this.value == '') {this.value = 'įvesti kodą';}"
+ onfocus="if (this.value == 'įvesti kodą') {this.value = '';}">
+					<button type="button" class="ok" onclick="enterCode()">OK</button><br><br>
+					<p id="statusfield"></p>
 					<p>Surink <span id="required-codes">5</span> kodus ir gauk prizą! Kodų ieškok renginių vietose.</p>
 					<p>Tau dar liko rasti <span id="code-counter"></span> kodus, kad gautum nuorodą, kur galėsi atsiimti prizą.</p>
-					<p>Įvesti kodą:</p>
-					<input class="codeinput" id="codeinputfield" maxlength="8" type="tel">
-					<button type="button" class="ok" onclick="enterCode()">OK</button>
-					<button onclick="emptyCodes()">Clear registry</button>
-					</form>
-					<p id="statusfield"></p>
 				</div>
 				<div id="gameover">
 					<p>Sveikinu! Tu surinkai reikiamą kodų skaičių.</p>
 					<p>Prizą gali atsiimti Vilniuje:</p>
 					<p>Vilniaus g. 27. Lizarran restorane</p>
-					<img src="img/map1.png">
+					<img class="winmap" onclick="goToMap('54.684909,25.279058')" src="img/map1.png">
 					<p>arba Kaune:</p>
 					<p>S. Daukanto g. 28, Vytauto Didžiojo universitete</p>
-					<img src="img/map2.png">
-					<button onclick="emptyCodes()">Clear registry</button>
-					<!--<p>Įvesti atsiėmimo kodą:</p>
-					<input class="codeinput" maxlength="8" type="tel">
-					<button type="button" class="ok">OK</button> -->
+					<img class="winmap" onclick="goToMap('54.898342,23.914041')" src="img/map2.png">
 				</div>
 			</div>
 			<div id="adcontent"><iframe src="http://www.loopaloo.com/adlink.php"></iframe></div>
 			<!--3 Main buttons-->
 			<div id="bottom">
-				<a href="#list"><div class="button list">Programa</div></a>
+				<a href="#list"><div class="button listb">Programa</div></a>
 				<a href="#map"><div class="button map">Žemėlapis</div></a>
 				<a href="#game"><div class="button game">Žaidimas</div></a>
-				<a href="https://facebook.com/tyrejunaktis#phonegap=external"><div class="button facebook">Facebook</div></a>
+				<a  href="#" target="_blank"><div class="button facebook" onclick="window.open('http://www.loopaloo.com/adlink.php#phonegap=external', '_system');"></div></a>
 			</div>
-			<!--<a href="#adlink"><div id="ad" onclick="openURL();"></div></a>-->
+			<a href="#"><div id="ad"></div></a>
 		</div>
 	</body>
 </html>

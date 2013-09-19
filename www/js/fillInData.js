@@ -1,4 +1,5 @@
-﻿var dataJSONlocation = 'http://tnt.lanparty.lt';
+﻿//var dataJSONlocation = 'http://tnt.lanparty.lt';
+var dataJSONlocation = 'http://www.loopaloo.com/json/';
 //var dataJSONlocation = 'http://www.xn--tyrjnaktis-tmb91i.lt/13metu_json&showtemplate=false';
 var eventsArray = new Array();
 
