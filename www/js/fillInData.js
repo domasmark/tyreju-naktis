@@ -91,7 +91,7 @@ addOnloadEvent(function() {
 				var eventHTML = '';
 				
 				eventHTML += '<div id="event-'+id+'">\n';
-				eventHTML += '<div class="title">'+pavadinimas+'</div>\n';
+				eventHTML += '<div class="title"><b>'+pavadinimas+'</b></div>\n';
 				eventHTML += '<div class="time">'+laikas+'</div>\n'
 				eventHTML += '<p>'+universitetas+'</p>\n';
 				eventHTML += '<p>'+turinys+'</p>\n';
@@ -105,7 +105,7 @@ addOnloadEvent(function() {
 				zoneDiv.insertAdjacentHTML('afterBegin', eventHTML);
 				eventHTML = '';
 				eventHTML += '<div id="event-'+id+'">\n';
-				eventHTML += '<div class="title">'+pavadinimas+'</div>\n';
+				eventHTML += '<div class="title"><b>'+pavadinimas+'</b></div>\n';
 				eventHTML += '<div class="time">'+laikas+'</div>\n'
 				eventHTML += '<p>'+miestas+'</p>\n';
 				eventHTML += '<p>'+turinys+'</p>\n';
@@ -176,7 +176,7 @@ addOnloadEvent(function() {
 				var eventHTML = '';
 				
 				eventHTML += '<div id="event-'+id+'">\n';
-				eventHTML += '<div class="title">'+pavadinimas+'</div>\n';
+				eventHTML += '<div class="title"><b>'+pavadinimas+'</b></div>\n';
 				eventHTML += '<div class="time">'+laikas+'</div>\n'
 				eventHTML += '<p>'+universitetas+'</p>\n';
 				eventHTML += '<p>'+turinys+'</p>\n';
@@ -191,7 +191,7 @@ addOnloadEvent(function() {
 
 				eventHTML = '';
 				eventHTML += '<div id="event-'+id+'">\n';
-				eventHTML += '<div class="title">'+pavadinimas+'</div>\n';
+				eventHTML += '<div class="title"><b>'+pavadinimas+'</b></div>\n';
 				eventHTML += '<div class="time">'+laikas+'</div>\n'
 				eventHTML += '<p>'+miestas+'</p>\n';
 				eventHTML += '<p>'+turinys+'</p>\n';
