@@ -48,10 +48,12 @@ function updateGameScreen() {
 	if (numCodesUnlocked >= codesRequired) {
 		$('#gameover').show();
 		$('#gameon').hide();
+		$('#startgame').hide();
 	} else {
 		$('#code-counter').html(''+(codesRequired-numCodesUnlocked));
 		$('#gameover').hide();
 		$('#gameon').show();
+		$('#startgame').hide();
 	};
 	
 	$('#required-codes').html(''+codesRequired);
@@ -60,6 +62,14 @@ function updateGameScreen() {
 function emptyCodes() {
 	var db = window.localStorage;
 	db.clear();
+	updateGameScreen();
+}
+function startGame() {
+	var gameStarted = localStorage['myKey'] || 'defaultValue';
+	if (gameStarted != 'true') {
+		$('#startgame').hide();
+		localStorage['myKey'] = 'true';
+	}
 	updateGameScreen();
 }
 

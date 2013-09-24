@@ -30,6 +30,15 @@ $(document).ready(function() {
 	});
 	$(".button.game").click(function(){
 		menuGame();
+		var gameStarted = localStorage['myKey'] || 'defaultValue';
+		if (gameStarted == 'true') {
+			$('#startgame').hide();
+		}
+		else {
+			$('#startgame').show();
+			$('#gameover').hide();
+			$('#gameon').hide();	
+		}
 	});
 	/*$(".button.facebook").click(function(){
 		menuFacebook();
