@@ -324,7 +324,7 @@ li {
 	margin: 0 auto 0 auto;
 }
 .startbtn {
-	margin: 0 auto 0 auto;
+	margin: 10px auto 20px auto;
 	border-radius: 0;
 	padding: 0;
 	padding: 10px;
@@ -338,6 +338,11 @@ li {
 	-moz-user-select: -moz-none;
 	-khtml-user-select: none;
 	-webkit-user-select: none;
+}
+.rules {
+	padding: 0 12px 20px 12px;
+	list-style: decimal;
+	line-height: 1.5em;
 }
 .codeinput {
 	border-radius: 0;
